@@ -1,0 +1,101 @@
+@import url("https://fonts.googleapis.com/css2?family=Oxygen&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Orbitron&display=swap");
+
+@import "config";
+
+body {
+  background: linear-gradient(to bottom right, #542437 0%, #cdb380 100%) 100%
+    no-repeat;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  color: $color;
+}
+
+.App {
+  text-align: center;
+  font-family: $fontForAll;
+
+  h1 {
+    font-size: 35px;
+    text-transform: uppercase;
+    margin: 0;
+    padding: 1.6em;
+  }
+
+  #settings {
+    @include display-style;
+    margin-bottom: 3em;
+
+    #break-label,
+    #session-label {
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    .setTimer-controls {
+      @include display-style;
+
+      @include button-style;
+
+      div {
+        font-size: 25px;
+        font-weight: 900;
+        padding: 10px;
+        font-family: $digitalFont;
+      }
+    }
+  }
+
+  .timeFunction {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 20px 140px;
+    border: 3px solid $color;
+    border-radius: 50px;
+    box-shadow: 0 0 1.2rem 0 rgba(0, 0, 0, 0.4);
+
+    .timer {
+      #timer-label {
+        margin: 0;
+        padding: 12px 15px 15px 15px;
+        font-size: 30px;
+      }
+
+      #time-left {
+        margin: 0;
+        padding: 15px;
+        font-size: 45px;
+        font-family: $digitalFont;
+      }
+    }
+
+    #controls {
+      margin: 0;
+      padding: 15px 15px 12px 15px;
+      @include display-style;
+
+      @include button-style;
+    }
+  }
+}
+
+@media (max-width: 575px) {
+  .App {
+    h1 {
+      padding: 1em;
+      font-size: 30px;
+    }
+
+    #settings {
+      flex-direction: column;
+      justify-content: space-evenly;
+      margin-bottom: 1.5em;
+    }
+
+    .timeFunction {
+      padding: 20px 60px;
+    }
+  }
+}

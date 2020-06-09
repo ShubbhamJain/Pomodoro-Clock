@@ -1,5 +1,5 @@
 import React from "react";
-import "./App.scss";
+import "./scss/App.scss";
 import SetTimer from "./components/SetTimer";
 import Timer from "./components/Timer";
 
@@ -176,24 +176,26 @@ class App extends React.Component {
           />
         </div>
 
-        <Timer
-          mode={this.state.mode}
-          time={this.convertMilliseconds(this.state.time, "mm:ss")}
-        />
+        <div className="timeFunction">
+          <Timer
+            mode={this.state.mode}
+            time={this.convertMilliseconds(this.state.time, "mm:ss")}
+          />
 
-        <Controls
-          active={this.state.active}
-          handlePlayPause={this.handlePlayPause}
-          handleReset={this.handleReset}
-        />
+          <Controls
+            active={this.state.active}
+            handlePlayPause={this.handlePlayPause}
+            handleReset={this.handleReset}
+          />
 
-        <audio
-          id="beep"
-          type="audio/mp3"
-          preload="none"
-          src="https://s3-us-west-1.amazonaws.com/benjaminadk/Data+synth+beep+high+and+sweet.mp3"
-          ref={(av) => (this.audio = av)}
-        ></audio>
+          <audio
+            id="beep"
+            type="audio/mp3"
+            preload="none"
+            src="https://s3-us-west-1.amazonaws.com/benjaminadk/Data+synth+beep+high+and+sweet.mp3"
+            ref={(av) => (this.audio = av)}
+          ></audio>
+        </div>
       </div>
     );
   }

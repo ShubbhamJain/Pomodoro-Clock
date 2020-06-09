@@ -1,0 +1,35 @@
+$fontForAll: "Oxygen", sans-serif;
+$digitalFont: "Orbitron", "Roboto";
+$lightBlack: #343838;
+$cloud: #5e6f8c;
+$gold: #cdb380;
+$color: darken(
+  $color: $lightBlack,
+  $amount: 10,
+);
+
+@mixin display-style {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+@mixin button-style {
+  button {
+    font-size: 28px;
+    border-radius: 48%;
+    outline: none;
+    border: 2px solid $cloud;
+    padding: 6px 16px;
+    background-color: $lightBlack;
+    color: $cloud;
+
+    &:hover {
+      cursor: pointer;
+      color: $gold;
+      border-color: $gold;
+      transition: color 300ms ease-in-out;
+      transform: scale(0.98);
+    }
+  }
+}
